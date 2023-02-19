@@ -1,4 +1,5 @@
 # typescript_study
 <br>
-### getting start 
-- typescript의 타입을 공부합니다
+
+### 📙01 getting-start 
+  - typescript의 타입을 공부합니다
