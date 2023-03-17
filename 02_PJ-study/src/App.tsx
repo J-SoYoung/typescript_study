@@ -1,11 +1,17 @@
-import React, { FC } from "react";
+import React, { FC, createContext } from "react";
 import "./App.css";
-import { Person, HairColor} from "./components/Person";
+import { Heading } from "./components/Heading";
+import { SubHead } from "./components/SubHead";
+import { Status } from "./components/Status";
 
 const App: FC = () => {
   return (
-    <div className="App">
-      <Person name="thdud" age={20} email="thdud@gmail" hairColor={HairColor.Pink} />
+    <div className="AppBox">
+      <Heading>Children 데이터 출력하기</Heading>
+      <SubHead>
+        <Heading>헤더 컴포넌트 사이에 있는 데이터를 가져온다</Heading>
+      </SubHead>
+      <Status status="error" />
     </div>
   );
 };

@@ -20,16 +20,16 @@ export const Person: FC<Props> = ({ name, age, email, hairColor }) => {
 
   return (
     <div>
-      <h1>
-        {name}, {age}
-      </h1>
-      <h1>{email}</h1>
-      <input
+      <p>
+        이름 : {name}[{age}], {email}
+      </p>
+      나라 : <input
         type="text"
         placeholder="write down your country"
         onChange={handleChange}
       />
-      {hairColor}
+      {` ${country}`}
+      <p>내 머리색은 {hairColor}</p>
     </div>
   );
 };
