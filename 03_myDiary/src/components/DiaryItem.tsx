@@ -1,17 +1,14 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
+import { Diary } from "../type/mainType";
 
-export const DiaryItem = () => {
+export const DiaryItem: FC<Diary> = ({ diary }) => {
   return (
     <SectionItem>
-      <p>작성자</p>
-      <p>오늘의 감정</p>
-      <p>작성 일자</p>
-      <div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero quod, voluptatibus quos
-        excepturi quam nemo doloremque doloribus consectetur tenetur perferendis placeat, aliquid
-        ratione harum in facere odio nulla, animi dolorem.
-      </div>
+      <p>작성자 : {diary.name}</p>
+      <p>오늘의 감정 : {diary.emotion}</p>
+      <p>작성 일자 : {diary.created_date}</p>
+      <div>{diary.content}</div>
     </SectionItem>
   );
 };
