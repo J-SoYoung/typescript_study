@@ -16,6 +16,3 @@ export interface DiaryData extends DiaryState {
 export interface DiaryListProps {
   diaryList: DiaryData[];
 }
-export interface DiaryItemProps {
-  diary: DiaryData;
-}

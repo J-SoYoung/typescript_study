@@ -39,7 +39,6 @@ export const DiaryEdit = ({ onCreate }: onCreateProps) => {
       return;
     }
     onCreate({ name: state.name, content: state.content, emotion: state.emotion });
-    console.log(state);
     setState({
       name: "",
       content: "",

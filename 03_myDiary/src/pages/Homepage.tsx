@@ -2,14 +2,6 @@ import React, { useState, useRef } from "react";
 import { DiaryEdit, DiaryList } from "../components/index";
 import { DiaryData, DiaryListProps, DiaryState } from "../type/mainType";
 
-interface NewItemType {
-  name: string;
-  content: string;
-  emotion: string;
-  created_date: number;
-  id: number;
-}
-
 export const Homepage = () => {
   // const diaryList = [
   //   {
@@ -36,10 +28,26 @@ export const Homepage = () => {
     setDiaryList({ diaryList: [newItem, ...diaryList.diaryList] });
   };
 
+  const onRemove = (id: number): void => {
+    const newList = diaryList?.diaryList.filter((d) => {
+      return d.id !== id;
+    });
+    console.log(newList);
+    setDiaryList({ diaryList: newList });
+  };
+
+  const onEdit = ({ id, editContent }: { id: number; editContent: string }): void => {
+    const editItem = diaryList.diaryList.map((d: any) =>
+      d.id === id ? { ...d, content: editContent } : d,
+    );
+    console.log("home", id, editContent);
+    setDiaryList({ diaryList: editItem });
+  };
+
   return (
     <>
       <DiaryEdit onCreate={onCreate} />
-      <DiaryList diaryList={diaryList} />
+      <DiaryList diaryList={diaryList} onRemove={onRemove} onEdit={onEdit} />
     </>
   );
 };
