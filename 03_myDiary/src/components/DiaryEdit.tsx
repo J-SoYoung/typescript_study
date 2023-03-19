@@ -2,8 +2,12 @@ import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { DiaryState } from "../type/mainType";
 
-export const DiaryEdit = () => {
+interface onCreateProps {
+  onCreate: ({ name, content, emotion }: DiaryState) => void;
+}
 
+export const DiaryEdit = ({ onCreate }: onCreateProps) => {
+  // console.log(onCreate);
   const nameInput = useRef<HTMLInputElement>(null);
   const contentInput = useRef<HTMLTextAreaElement>(null);
 
@@ -34,6 +38,7 @@ export const DiaryEdit = () => {
       contentInput.current?.focus();
       return;
     }
+    onCreate({ name: state.name, content: state.content, emotion: state.emotion });
     console.log(state);
     setState({
       name: "",

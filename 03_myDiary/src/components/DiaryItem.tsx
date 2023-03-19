@@ -6,7 +6,7 @@ export const DiaryItem = ({diary}: DiaryItemProps) => {
     <SectionItem>
       <p>작성자 : {diary.name}</p>
       <p>오늘의 감정 : {diary.emotion}</p>
-      <p>작성 일자 : {diary.created_date}</p>
+      <p>작성 일자 : {diary.today}</p>
       <div>{diary.content}</div>
     </SectionItem>
   );

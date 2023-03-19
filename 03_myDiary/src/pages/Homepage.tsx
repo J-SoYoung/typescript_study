@@ -1,9 +1,16 @@
 import React, { useState, useRef } from "react";
 import { DiaryEdit, DiaryList } from "../components/index";
-import { DiaryListProps, DiaryState } from "../type/mainType";
+import { DiaryData, DiaryListProps, DiaryState } from "../type/mainType";
+
+interface NewItemType {
+  name: string;
+  content: string;
+  emotion: string;
+  created_date: number;
+  id: number;
+}
 
 export const Homepage = () => {
-  const [diaryList, setDiaryList] = useState<DiaryListProps>();
   // const diaryList = [
   //   {
   //     id: 1,
@@ -11,24 +18,27 @@ export const Homepage = () => {
   //     content: "'diaryList' is assigned a value but never",
   //     emotion: "happy",
   //     created_date: "2023-03-17",
-  //   },
+  //   }]
+
+  const [diaryList, setDiaryList] = useState<DiaryListProps>({ diaryList: [] });
 
   const dataId: React.MutableRefObject<number> = useRef(0);
-  const onCreate = ({ name, content, emotion }: DiaryState) => {
-    const created_date = new Date().getTime();
-    const newItem = {
+  const today = new Date().toLocaleString();
+  const onCreate = ({ name, content, emotion }: DiaryState): void => {
+    const newItem: DiaryData = {
       name,
       content,
       emotion,
-      created_date,
+      today,
       id: dataId.current,
     };
-    // dataId += dataId.current + 1;
+    dataId.current += 1;
+    setDiaryList({ diaryList: [newItem, ...diaryList.diaryList] });
   };
 
   return (
     <>
-      <DiaryEdit />
+      <DiaryEdit onCreate={onCreate} />
       <DiaryList diaryList={diaryList} />
     </>
   );
