@@ -8,7 +8,6 @@ interface PersonProps {
 }
 
 export const IntroduceList = (props: PersonProps) => {
-  console.log(props);
   return (
     <>
       {props.names.map((name, index) => {
