@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-between;
 }
-.basic {
+.basic,
+.introBox {
   width: 50%;
   height: 300px;
   padding: 16px;
@@ -10,14 +11,15 @@
   margin-bottom: 16px;
   border: 1px solid gray;
 }
-.introBox {
+.eventBox,
+.AppBox {
   width: 50%;
-  height: 300px;
   padding: 16px;
   box-sizing: border-box;
+  margin-bottom: 16px;
+  float: left;
   border: 1px solid gray;
 }
-
 .subtitle {
   font-size: 14px !important;
   color: green;

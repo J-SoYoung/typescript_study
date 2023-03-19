@@ -1,11 +1,11 @@
 import React, { FC, createContext } from "react";
 import "./App.css";
-import { Greek } from "./components/Greek";
-import { Introduce } from "./components/Introduce";
-import { IntroduceList } from "./components/IntroduceList";
-import { Person, HairColor } from "./components/Person";
+import { Greek } from "./components/propsBasic/Greek";
+import { Introduce } from "./components/propsBasic/Introduce";
+import { IntroduceList } from "./components/propsBasic/IntroduceList";
+import { Person, HairColor } from "./components/propsBasic/Person";
 
-const Basic: FC = () => {
+const AppBasic: FC = () => {
   const personName = {
     first: "정",
     last: "소영",
@@ -46,4 +46,4 @@ const Basic: FC = () => {
   );
 };
 
-export default Basic;
+export default AppBasic;

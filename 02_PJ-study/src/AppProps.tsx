@@ -1,10 +1,10 @@
 import React, { FC, createContext } from "react";
 import "./App.css";
-import { Heading } from "./components/Heading";
-import { SubHead } from "./components/SubHead";
-import { Status } from "./components/Status";
+import { Heading } from "./components/propsBasic/Heading";
+import { SubHead } from "./components/propsBasic/SubHead";
+import { Status } from "./components/propsBasic/Status";
 
-const App: FC = () => {
+const AppProps: FC = () => {
   return (
     <div className="AppBox">
       <Heading>Children 데이터 출력하기</Heading>
@@ -16,4 +16,4 @@ const App: FC = () => {
   );
 };
 
-export default App;
+export default AppProps;

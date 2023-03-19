@@ -1,8 +1,7 @@
-import React, { FC } from "react";
 import styled from "styled-components";
-import { Diary } from "../type/mainType";
+import { DiaryItemProps } from "../type/mainType";
 
-export const DiaryItem: FC<Diary> = ({ diary }) => {
+export const DiaryItem = ({diary}: DiaryItemProps) => {
   return (
     <SectionItem>
       <p>작성자 : {diary.name}</p>

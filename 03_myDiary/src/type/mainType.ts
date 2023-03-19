@@ -5,25 +5,13 @@ export interface DiaryState {
 }
 
 export interface DiaryData extends DiaryState {
-  id: number;
+  emotion: string;
   created_date: string;
 }
 
-export interface DiaryProps {
+export interface DiaryListProps extends Array<DiaryData>{
   diaryList: DiaryData[];
 }
-export interface Diary {
+export interface DiaryItemProps {
   diary: DiaryData;
 }
-
-// export interface Diary {
-//   id: number;
-//   name: string;
-//   content: string;
-//   emotion: string;
-//   created_date: string;
-// }
-
-// export interface DiaryProps {
-//   diaryList: Diary[];
-// }
